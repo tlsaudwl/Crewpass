@@ -1,0 +1,22 @@
+<!-- 메인페이지 -->
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crewpass</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <!-- 로고 및 로그인부분 -->
+            <div class="header">
+                <button type="button" class="logo" onclick="location.href='/'"> <img src="/img/logo.JPG" width="200" height="60"></button> 
+                <!-- 로그인세션유지if else문 삽입 -->
+                <%- include('logoutsession') %>
+            </div>
+        </header>
+        <%- body %>
+    </body>
+    </html>

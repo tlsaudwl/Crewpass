@@ -1,0 +1,121 @@
+<section>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>동아리 모집글 작성</title>
+        <style>
+            .header{
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+                margin: 20px 0 0 15px;
+                border-bottom: 4px solid #6BB9ED;
+            }
+            .logo {
+                border: 0;
+                background-color: white;
+                cursor: pointer;
+            }
+            .login {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-column-gap: 30px;
+                list-style-type: none;
+                margin-right: 20px;
+            }
+            .login a{
+                text-decoration: none;
+                color: black;
+                font-weight: 800;
+            }
+            textarea{
+                height:800px;
+                resize:none;
+                width:100%;
+            }
+            h4{
+                height:0px;
+                text-align:center;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            h5{
+                height: 0px;
+                font-size: 25px;
+                font-weight: bold;
+            }
+            tr{
+                height: 60px;       
+            }       
+            .totalTable{
+                width:35%;
+                margin: 0 auto;
+                border: hidden;
+            }
+            #submit{
+                width:15%;
+                margin:auto;
+                display:block;
+            }
+            .title{
+                width: 400px;
+                height: 30px;
+            }
+            .crew_end{
+                width: 150px;
+                height: 30px;
+                font-size: 15px;
+            }
+            .crew_gather_detail{
+                width: 95%;
+                height: 400px;
+                margin-right:5%;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="form-signin" action="/crewWrite/<%= identify_numb_manager %>" method="POST"> <!--req.params 오류 이유-->
+            <table class="totalTable">
+                <thead>
+                    <tr>
+                        <th><h4>동아리 모집글 작성</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> <!--동아리 모집글 제목-->
+                        <td><h5>동아리 모집글 제목</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="title" name="title" type="text">
+                        </td>
+                    </tr>
+                    <tr> <!--접수마감 날짜-->
+                        <td><h5>접수마감 날짜</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="crew_end" name="recruit_end" type="date">
+                        </td>
+                    </tr>
+                    <tr> <!--모집글 내용 작성-->
+                        <td><h5>모집글 내용 작성</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea class="crew_gather_detail" name="detail_info"></textarea> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <input id="submit" name="submit" type="submit" value="동아리 모집글 업로드">
+            <br>
+            <br>
+        </form>
+    </body>
+    </html>
+</section>

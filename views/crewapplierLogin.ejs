@@ -1,0 +1,84 @@
+<section>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>동아리 로그인</title>
+        <style>
+            .header{
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+                margin: 20px 0 0 15px;
+                border-bottom: 4px solid #6BB9ED;
+            }
+            .logo {
+                border: 0;
+                background-color: white;
+                cursor: pointer;
+            }
+            .login {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-column-gap: 30px;
+                    list-style-type: none;
+                    margin-right: 20px;
+            }
+
+            .login a{
+                text-decoration: none;
+                color: black;
+                font-weight: 800;
+            }  
+            h4{
+                height:0px;
+                text-align:center;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            tr{
+                height: 60px;
+            }
+            .totalTable{
+                width:35%;
+                margin: 0 auto;
+                border: hidden;
+            }
+            input{
+                width:50%;
+                height:30px;
+                margin:auto;
+                display:block;
+            }
+            #submit{
+            width:5%;
+            margin:auto;
+            display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="form-signin" action="/crewapplierLogin" method="POST">
+            <table class="totalTable">
+                <thead>
+                    <tr>
+                        <th><h4 class="form-sigin-header">동아리 지원자 보기 로그인</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <br>
+                            <input type="text" name="identify_numb_manager" id="inputIdentify_numb_manager" class="form-control" placeholder="동아리 번호" autofocus required>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input type="submit" id="submit" name="submit" value="로그인">
+            <br>
+            <br>
+        </form>
+    </body>
+</section>

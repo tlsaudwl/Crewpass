@@ -1,0 +1,19 @@
+<main>
+    <!-- 검색창부분 -->
+    <section>
+        <div class="crew__box">
+            <% crewinfo.forEach(crew_info => { %>
+            <div class="crewpost">
+                <div class="crew__info">
+                    <div class="crew__name"><%= crew_info.crew_name %></div>
+                    <div class="crew__region">#<%= crew_info.region %> #<%= crew_info.field %> </div>
+                    <div class="watch__crew">
+                        <a href="readCrew/<%= crew_info.identify_numb_manager %>">상세보기</a> 
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </section>
+</main>
+

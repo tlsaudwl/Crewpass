@@ -1,0 +1,308 @@
+/* 메인페이지시작(index.html) */
+.header{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    margin: 20px 0 0 15px;
+    border-bottom: 4px solid #6BB9ED;
+}
+
+.logo {
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* 로그인 세션유지 헤더 css */
+.login {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.login a{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+/* 로그아웃 헤더 css */
+.logout {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 30px;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.logout a{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+/* 검색창 css */
+.searching {
+    text-align: center;
+    padding-bottom: 20px;
+}
+/* 상,우,하,좌 */
+.search1{
+    display:inline-block;
+}
+
+.search2{
+    display:inline-block;
+}
+
+.search__bar{
+    height: 45px;
+    width: 500px;
+}
+
+.search__bar::placeholder {
+    color:gray;
+}
+
+.search__button {
+    width: 50px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid rgb(230,227,227);
+}
+
+/* main부분(인기모집동아리,동아리모집글부분) */
+main {
+    margin: 30px 80px; /*세로 가로*/
+}
+
+.top__title {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.top__subtitle{
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* 동아리 모집글 css */
+.crew__header{
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.crew__title{
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.filter{
+    font-size: 26px;
+    font-weight: 800;
+    border-radius: 6px;
+    border:none;
+    cursor: pointer;
+}
+
+.crew__box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    margin: 50px 30px 0 30px;
+}
+
+.crewpost{
+    border:1px solid rgb(230,227,227);
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgb(214,214,214);
+}
+
+.crew__img{
+    background-image: url("../img/poster.JPG");
+    height: 180px;
+    background-size: 100% 100%;
+}
+
+.crew__name{
+    margin:10px 0 10px 0;
+    font-size:30px;
+}
+
+.crew__region{
+    margin:10px 0 10px 0;
+    font-size:20px;
+    color: grey;
+}
+
+.watch__crew{
+    text-align: center;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between; */
+}
+
+.btn-group{
+    padding-top: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-group button{
+    background-color: #5DE0FB;
+    color:white;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid rgb(230,227,227);
+}
+
+/* filtering.html페이지 */
+/* 필터링선택부분 */
+.filter_title{
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.filter__subtitle{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.list_division ul{
+    list-style-type: none;
+    padding:0;
+}
+
+.list_division li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.list_division a {
+    text-decoration: none;
+    color:black
+}
+
+/* 선택된 필터에 따라 정렬 */
+.show_title{
+    padding-top: 20px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/*로그인부분*/
+.login_title{
+    display:flex;
+    justify-content: center;
+}
+form{
+    padding:10px;
+}
+.input-box{
+    position:relative;
+    margin:10px 0;
+}
+.input-box > input{
+    background:transparent;
+    border:none;
+    border-bottom: solid 1px #ccc;
+    padding:20px 0px 5px 0px;
+    font-size:14pt;
+    width:100%;
+}
+input::placeholder{
+    color:transparent;
+}
+input:placeholder-shown + label{
+    color:#aaa;
+    font-size:14pt;
+    top:15px;
+
+}
+input:focus + label, label{
+    color:#8aa1a1;
+    font-size:10pt;
+    pointer-events: none;
+    position: absolute;
+    left:0px;
+    top:0px;
+    transition: all 0.2s ease ;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+input:focus, input:not(:placeholder-shown){
+    border-bottom: solid 1px #6BB9ED;
+    outline:none;
+}
+input[type=submit]{
+    background-color: #6BB9ED;
+    border:none;
+    color:white;
+    border-radius: 5px;
+    width:100%;
+    height:35px;
+    font-size: 14pt;
+    margin-top:100px;
+}
+#forgot{
+    text-align: center;
+    font-size:12pt;
+    color:rgb(164, 164, 164);
+    margin:10px 0px;
+}
+
+/* 회원가입 */
+.jointitle{
+    height: 40px;
+    text-align:center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.totalTable{
+    width:35%;
+    margin: 0 auto;
+    border: hidden;
+}
+.joininputs{
+    width:50%;
+    height:30px;
+    margin:auto;
+    display:block;
+}
+.joininputs::placeholder {
+    color:gray;
+}
+#submit_join{
+width:15%;
+margin:auto;
+display:block;
+}
+
+/* 모집글상세보기 */
+.crew_info{
+    margin-left: 5%;
+}
+
+.crew_detail_info{
+    width: 90%;
+    height: 400px;
+    margin-left:5%;
+    margin-right:5%;
+}
+
+/*모집글상세보기 신버전*/
+
+
+            

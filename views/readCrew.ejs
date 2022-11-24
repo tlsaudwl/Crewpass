@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title><%= crew_info.crew_name %></title>
+    <style>
+        .header{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            margin: 20px 0 0 15px;
+            border-bottom: 4px solid #6BB9ED;
+        }
+        .logo {
+            border: 0;
+            background-color: white;
+            cursor: pointer;
+        }
+        .login {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-column-gap: 30px;
+                    list-style-type: none;
+                    margin-right: 20px;
+                }
+
+        .login a{
+            text-decoration: none;
+            color: black;
+            font-weight: 800;
+        }               
+
+        .others{
+            height: 60px;    	
+        }
+        textarea{
+            height:800px;
+            resize:none;
+            width:100%;
+        }
+        .totalTable{
+            width:50%;
+            margin: 0 auto;
+            border: hidden;
+        }
+        .crewname{
+            width:40%;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .region{
+            width:30%;
+            width:30%;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color:rgb(122, 121, 121);  		
+        }
+        .field{
+            width:30%;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color:rgb(122, 121, 121);   		
+        }
+        .title{
+            font-size: 25px;
+            font-weight: bold;
+            text-align:center;
+            color:blue;
+        }
+        .apply{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table class="totalTable">
+        <thead>
+        </thead>
+        <tbody>
+            <tr class="others">
+                <td class="crewname">
+                    <%= crew_info.crew_name %>
+                </td>
+                <td class="region">
+                    #<%= crew_info.region %>
+                </td>
+                <td class="field">
+                    #<%= crew_info.field %>
+                </td>
+            </tr>
+            <tr class="others">
+                <td colspan="3" class="title">
+                    <%= crewrecruit_detail.title %>
+                </td>
+            </tr>
+            <tr class="others">
+                <td colspan="3">
+                    마감일:  <%= crewrecruit_detail.recruit_end %>
+                </td>
+            </tr>
+            <tr class="story">
+                <td colspan="3">
+                    <textarea><%= crewrecruit_detail.detail_info %></textarea>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td class="apply" colspan="3">
+                    <a href="/apply/<%= crew_info.identify_numb_manager %>">지원하기</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+</body>
+</html>
+    
+

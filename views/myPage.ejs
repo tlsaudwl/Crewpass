@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <style>
+            .header{
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+                margin: 20px 0 0 15px;
+                border-bottom: 4px solid #6BB9ED;
+            }
+            .logo {
+                border: 0;
+                background-color: white;
+                cursor: pointer;
+            }
+            .login {
+                        display: grid;
+                        grid-template-columns: auto auto;
+                        grid-column-gap: 30px;
+                        list-style-type: none;
+                        margin-right: 20px;
+                    }
+
+            .login a{
+                text-decoration: none;
+                color: black;
+                font-weight: 800;
+            }               
+        </style>
+    </head>
+    <body>
+        <div style="width: 40%; margin-left:30vw; margin-right:30vw;">
+            <section>
+                <h2>나의 정보</h2>
+                <table border="1" bgcolor = "Darkgrey" width ="100%" align = center>
+                    <tr bgcolor="skyblue" align ="center"></tr>
+                    <tr>
+                        <td align="center" width ="170"> <b>이메일</b></td>
+                        <td>
+                            <%= memberinfo.email %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><b>이름</b></td>
+                        <td>
+                            <%= memberinfo.name %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center"><b>생년월일</b></td>
+                        <td>
+                            <%= memberinfo.birth %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan = "2" align="center">
+                            <a href="#" style = "text-decoration: none;color: black;font-weight: 800;" >동아리 지원 이력 보기</a>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>나의 동아리</h2>
+                <table border="1" bgcolor="Darkgray" width ="100%" align = center>
+                    <tr bgcolor="skyblue" align ="center">
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="/crewSubmit" style = "text-decoration: none;color: black;font-weight: 800;" >동아리 등록</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="/crewLogin" style = "text-decoration: none;color: black;font-weight: 800;" >동아리 모집글 작성</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="/crewrecruitLogin" style = "text-decoration: none;color: black;font-weight: 800;" >동아리 모집글 목록</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="/crewapplierLogin" style = "text-decoration: none;color: black;font-weight: 800;" >동아리 지원자 보기</a>
+                        </td>
+                    </tr>
+                </table>
+         </section>
+         </div>
+
+    </body>
+</html>

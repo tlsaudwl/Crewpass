@@ -1,0 +1,70 @@
+<section>
+    <html>
+        <head>
+            <style>
+                .header{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-content: space-between;
+                    margin: 20px 0 0 15px;
+                    border-bottom: 4px solid #6BB9ED;
+                }
+                .logo {
+                    border: 0;
+                    background-color: white;
+                    cursor: pointer;
+                }
+                .login {
+                            display: grid;
+                            grid-template-columns: auto auto;
+                            grid-column-gap: 30px;
+                            list-style-type: none;
+                            margin-right: 20px;
+                        }
+
+                .login a{
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 800;
+                }  
+                table{
+                    width: 30%;
+                    margin: 0 auto;
+                    display: block;
+                }
+                td{
+                    width:25%;
+                }
+                .tabtitle{
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: bold;
+                    background-color: rgb(153, 151, 151);
+                }
+            </style>
+        </head>
+        <body>
+            <br>
+            <br>
+            <br>
+            <div>
+                <table border="1">
+                    <thead class="tabtitle">
+                        <td>num</td>
+                        <td>동아리 모집글명</td>
+                    </thead>
+                    <tbody>
+                        <% num = 1; %>
+                        <% crewrecruit_detail.forEach(crewrecruit_detail => { %>
+                            <tr>
+                                <td><%= num %></td>
+                                <td><a href="/readCrew/<%=crewrecruit_detail.identify_numb_manager %>"><%= crewrecruit_detail.title %></a></td>
+                                <% num +=1; %>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>    
+        </body>
+    </html>
+</section>

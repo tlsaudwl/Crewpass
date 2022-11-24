@@ -1,0 +1,68 @@
+<section>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>회원 로그인</title>
+        <style>
+            h4{
+                height:0px;
+                text-align:center;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            .totalTable{
+                width:35%;
+                margin: 0 auto;
+                border: hidden;
+            }
+            input{
+                width:50%;
+                height:30px;
+                margin:auto;
+                display:block;
+            }
+            #submit{
+                width:15%;
+                height:30px;
+                margin:auto;
+                display:block;
+            }
+            .membersubmit{
+                width:15%;
+                height:30px;
+                margin:auto;
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="form-signin" action="/login" method="POST">
+            <table class="totalTable">
+                <thead>
+                    <tr>
+                        <th><h4 class="form-sigin-header">회원 로그인</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <br>
+                            <input type="text" name="email" id="inputemail" class="form-control" placeholder="  @주소를 포함한 email" autofocus required>
+                            <br>
+                            <input type="text" name="password" id="inputpassword" class="form-control" placeholder="  password" autofocus required>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="forgot">
+                <a href="/memberSubmit">회원가입</a>
+             </div>
+            <br>
+                <input type="submit" id="submit" name="submit" value="로그인">
+            <br>
+            <br>
+        </form>
+    </body>
+</section>

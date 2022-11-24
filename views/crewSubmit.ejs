@@ -1,0 +1,207 @@
+<section>
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>동아리 등록</title>
+        <style>
+            h4{
+                height:0px;
+                   text-align:center;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            h5{
+                height: 0px;
+                  font-size: 25px;
+                  font-weight: bold;
+            }
+            tr{
+                height: 60px;       
+            }       
+            .totalTable{
+                width:50%;
+                margin: 0 auto;
+                border: hidden;
+            }
+            #crew_name{
+                height:30px;
+                width: 50%;
+            }
+            #registerCheckFunction{
+                width: 15%;
+            }
+            #submit{
+                width:15%;
+                margin:auto;
+                display:block;
+            }
+            .field-table{
+                width: 100%;
+                text-align:center;
+                border: hidden;
+                font-size: 20px;
+                  font-weight: bold;
+                  color:rgb(122, 121, 121);         
+            }
+            .region-table{
+                width: 100%;
+                text-align:center;
+                border: hidden;
+                font-size: 20px;
+                  font-weight: bold;
+                  color:rgb(122, 121, 121);        
+            }
+            .application_questions{
+                height:30px;
+                width: 100%;       
+            }
+        </style>
+    </head>
+    <body>
+        <form class="form-signin" action="/crewSubmit" method="POST">
+            <table class="totalTable">
+                <thead>
+                    <tr>
+                        <th><h4>동아리 등록</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>  <!--동아리명 입력 -->
+                        <td><h5>동아리명</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="crew_name" name="crew_name" type="text"> <!-- DB 속 속성명과 같게 id설정 -->
+                        </td>                
+                    </tr>
+                    <tr>  <!-- 활동분야 선택(1개) -->
+                        <td><h5>활동분야</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="field-table">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="문화/예술/공연">문화/예술/공연
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="봉사/사회활동">봉사/사회활동
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="학술/교양">학술/교양
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="창업/취업">창업/취업
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="어학">어학
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="취업">취업
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="친목">친목
+                                        </td>
+                                        <td>
+                                            <input type="radio" name="field" autocomplete="off" value="기타">기타
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>               
+                        </td>
+                    </tr>
+                    <tr>  <!-- 활동지역 선택(3개) -->
+                        <td>
+                            <h5>활동지역</h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="region-table">
+                                    <thead>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="전국">전국
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="비대면">비대면
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="수도권">수도권
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="충북/충남/대전">충북/충남/대전
+                                            </td>
+                                                <td>
+                                                <input type="radio" name="region" autocomplete="off" value="전북">전북
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="전남/광주">전남/광주
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="경북/대구">경북/대구
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="경남/부산/울산">경남/부산/울산
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="강원">강원
+                                            </td>
+                                            <td>
+                                                <input type="radio" name="region" autocomplete="off" value="제주">제주
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>               
+                        </td>
+                    </tr>
+                    <tr>  <!-- 질문 5개인데 5개 모두 작성해야 한다. -->
+                        <td><h5>지원서 항목</h5></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="application_questions" type="text" id="application_question_1" name="application_question_1">
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="application_questions" type="text" id="application_question_2" name="application_question_2">
+                        </td>                    
+                    </tr> 
+                    <tr>
+                        <td>
+                            <input class="application_questions" type="text" id="application_question_3" name="application_question_3">
+                        </td>                    
+                    </tr> 
+                    <tr>
+                        <td>
+                            <input class="application_questions" type="text" id="application_question_4" name="application_question_4">
+                        </td>                    
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="application_questions" type="text" id="application_question_5" name="application_question_5">   
+                        </td>                    
+                    </tr>                                        
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <input type="submit" id="submit" name="submit" value="동아리 등록">   
+            <br>
+            <br>
+        </form>
+    </body>
+    </html>  
+</section>
