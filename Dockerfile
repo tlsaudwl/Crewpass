@@ -2,7 +2,7 @@ From ubuntu:20.04 as builder
 ENV NODE_ENV="production"
 COPY . /app
 WORKDIR /app
-RUN npm install
+RUN node main.js
 FROM ubuntu:20.04
 ENV NODE_ENV="production"
 COPY --from=builder /app /app
