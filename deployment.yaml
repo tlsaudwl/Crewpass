@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: crewpass
+        labels:
+        app: crewpass
+spec:
+        replicas: 3
+        strategy:
+        type: Recreate
+        selector:
+        matchLabels:
+        app: crewpass
+...
+template:
+        metadata:
+                labels:
+                app: crewpass
+                tier: crewpass
+        spec:
+                containers:
+                - name: crewpass
+                image: tlsaudwl/crewpass:latest
+                imagePullPolicy: Always
+                ports:
+                - containerPort: 5000
+                name: crewpass
+---
+apiVersion: v1
+kind: Service
+metadata:
+        name: crewpass
+        labels:
+        app: crewpass
+spec:
+ports:
+        - port: 80
+        targetPort: 5000
+        selector:
+        app: crewpass
+        tier: crewpass
+        type: LoadBalancer
