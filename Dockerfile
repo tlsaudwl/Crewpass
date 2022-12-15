@@ -1,9 +1,9 @@
-From ubuntu:20.04 as builder
+From bitnami/node:9 as builder
 ENV NODE_ENV="production"
 COPY . /app
 WORKDIR /app
-RUN node main.js
-FROM ubuntu:20.04
+RUN npm install
+FROM bitnami/node:9-prod
 ENV NODE_ENV="production"
 COPY --from=builder /app /app
 WORKDIR /app
