@@ -15,7 +15,7 @@ pipeline {
 		stage("Build image") {
 			steps {
 				script {
-					myapp = docker.build("tlsaudwl/crewpass:${env.BUILD_ID}")
+					myapp = docker.build("tlsaudwl/opensource:${env.BUILD_ID}")
 				}
 			}
 		}
@@ -31,10 +31,10 @@ pipeline {
 		}
 		stage('Deploy to GKE') {
 			when {
-				branch 'main'
+				branch 'master'
 			}
 			steps{
-			sh "sed -i 's/crewpass:latest/crewpass:${env.BUILD_ID}/g' deployment.yaml"
+			sh "sed -i 's/opensource:latest/opensource:${env.BUILD_ID}/g' deployment.yaml"
 			step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
 			}
 		}

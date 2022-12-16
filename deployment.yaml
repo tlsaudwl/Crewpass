@@ -1,42 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-        name: crewpass
+        name: opensource
         labels:
-        app: crewpass
+        app: opensource
 spec:
         replicas: 3
         strategy:
         type: Recreate
         selector:
         matchLabels:
-        app: crewpass
+        app: opensource
 ...
 template:
         metadata:
                 labels:
-                app: crewpass
-                tier: crewpass
+                app: opensource
+                tier: opensource
         spec:
                 containers:
-                - name: crewpass
-                image: tlsaudwl/crewpass:latest
+                - name: opensource
+                image: tlsaudwl/opensource:latest
                 imagePullPolicy: Always
                 ports:
                 - containerPort: 5000
-                name: crewpass
+                name: opensource
 ---
 apiVersion: v1
 kind: Service
 metadata:
-        name: crewpass
+        name: opensource
         labels:
-        app: crewpass
+        app: opensource
 spec:
 ports:
         - port: 80
         targetPort: 5000
         selector:
-        app: crewpass
-        tier: crewpass
+        app: opensource
+        tier: opensource
         type: LoadBalancer
